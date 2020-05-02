@@ -1,0 +1,12 @@
+{
+    "name": "dell/asm-php2",
+    "require": {
+        "jenssegers/blade": "*",
+        "illuminate/database": "^5.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
