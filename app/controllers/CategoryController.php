@@ -1,18 +1,25 @@
 <?php
 namespace App\Controllers;
 use App\Models\Category;
-class CategoryController{
+class CategoryController extends BaseController{
 
     public function showCategory(){
         $category = Category::all();
-        // header('location: /');
-        // die;
-        include_once './app/views/showcategory.php';
+        $this->render('categories.category', ['listItem' => $category]); //ten bien ton tai o file view
     }
-    public function addForm(){
-        include_once './app/views/addcategory.php';
+    
+    public function addForm(){       
+       
+        $this->render('categories.add-form', []);
     }
-
+    
+    public function saveadd(){
+        $requestData = $_POST;
+        $model = new Category();
+        $model->fill($requestData);      
+        $model->save();
+        header('location: ./categories');
+    }
     
 
 }
