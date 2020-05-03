@@ -24,6 +24,20 @@ switch ($url) {
          $ctr->saveadd();
         break;
 
+    case 'remove-product':
+        $ctr = new ProductController();
+        $ctr->remove();
+         break; 
+
+     case 'edit-product':
+        $ctr = new ProductController();
+         $ctr->editForm();
+         break;
+         
+     case 'save-edit-product':
+        $ctr = new ProductController();
+        $ctr->saveEdit();
+         break;
     case 'categories':
         $ctr = new CategoryController();
          $ctr->showCategory();
