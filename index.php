@@ -26,14 +26,14 @@ switch ($url) {
 
     case 'remove-product':
         $ctr = new ProductController();
-        $ctr->remove();
+        $ctr->removes();
          break; 
 
      case 'edit-product':
         $ctr = new ProductController();
          $ctr->editForm();
          break;
-         
+
      case 'save-edit-product':
         $ctr = new ProductController();
         $ctr->saveEdit();
@@ -52,6 +52,21 @@ switch ($url) {
      case 'save-add-cate':
         $ctr = new CategoryController();
         $ctr->saveadd();
+        break;
+
+    case 'remove-categories':
+         $ctr = new CategoryController();
+        echo $ctr->removes();
+         break;
+
+     case 'edit-categories':
+         $ctr = new CategoryController();
+         echo $ctr->editForm();
+        break;
+
+    case 'save-edit-categories':
+        $ctr = new CategoryController();
+        echo $ctr->saveEdit();
         break;
     default:
         echo "Đường dẫn không tồn tại";
