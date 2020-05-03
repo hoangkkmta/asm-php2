@@ -19,18 +19,30 @@
             <a class="nav-link" href="./add-categories">Thêm danh mục</a>
         </nav>
         <h3>Quản lý sản phẩm</h3>
+        <p class="text-danger"><?php echo e($errMsg); ?></p>
         <table class="table table-stripped">
             <thead>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Image</th>
                 <th>Price</th>
+                <th>
+                    <a href="./add-product" class="btn btn-success">Add new</a>
+                </th>
             </thead>
             <tbody>
                 <?php $__currentLoopData = $listItem; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pro): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
                         <td><?php echo e($pro->id); ?></td>
                         <td><?php echo e($pro->name); ?></td>
+                        <td>
+                            <img src="<?php echo e($pro->image); ?>" class="img-avatar" width="100">
+                        </td>
                         <td><?php echo e($pro->price); ?></td>
+                        <td>
+                            <a href="./edit-product?id=<?php echo e($pro->id); ?>" class="btn btn-primary">Edit</a>
+                            <a href="./remove-product?id=<?php echo e($pro->id); ?>" class="btn btn-danger">Remove</a>
+                        </td>
                     </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
