@@ -62,7 +62,7 @@ class CategoryController extends BaseController{
         $requestData = $_POST;
         $model->fill($requestData);
         $model->save();
-        header('location: ./categories');
+        header("location: ./categories?msg=$msg");
 
         
     }
@@ -82,7 +82,7 @@ class CategoryController extends BaseController{
             $msg = "Xóa sản phẩm thành công";
         }
 
-        header("location: ./categories");
+        header("location: ./categories?msg=$msg");
         die;
     }
 
