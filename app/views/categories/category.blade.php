@@ -19,10 +19,14 @@
             <a class="nav-link" href="./add-categories">Thêm danh mục</a>
         </nav>
         <h3>Quản lý danh mục</h3>
+        <p class="text-danger">{{$errMsg}}</p>
         <table class="table table-stripped">
             <thead>
                 <th>ID</th>
                 <th>Name</th>
+                <th>
+                    <a href="./add-categories" class="btn btn-success">Add new</a>
+                </th>
                 
             </thead>
             <tbody>
@@ -30,7 +34,10 @@
                     <tr>
                         <td>{{$cate->id}}</td>
                         <td>{{$cate->cate_name}}</td>
-                       
+                        <td>
+                            <a href="./edit-categories?id={{$cate->id}}" class="btn btn-primary">Edit</a>
+                            <a href="./remove-categories?id={{$cate->id}}" class="btn btn-danger">Remove</a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
