@@ -19,7 +19,7 @@
         </nav>
         
         
-        <h3>Tạo mới danh mục</h3>
+        <h3>Edit danh mục</h3>
        
         <form action="./save-edit-categories?id=<?php echo e($model->id); ?>" method="POST" enctype="multipart/form-data">
             <div class="row">
